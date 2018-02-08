@@ -8,7 +8,16 @@ h1 {
   font-size: 3em;
 }
 
+.header-start-page {
+  margin-top: 200px;
+}
+
+#game-info {
+  margin-top: 20px;
+}
+
 #start-game-button {
+  margin-top: 50px;
   clear: both;
   background-color: #cf6640;
   border: none;
@@ -50,6 +59,7 @@ h1 {
   display: inline-block;
   font-size: 16px;
   font-family: Courier;
+  display: none;
 }
 
 #submit-answer {
@@ -69,10 +79,11 @@ h1 {
 .game-box {
   margin-left: 10%;
   margin-right: 10%;
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 160px;
   padding: 5, 40;
   background-color: #7a81cc;
+  border-radius: 20px;
 }
 
 .timer-box {
@@ -91,6 +102,11 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 26px;
   padding-left: 20px;
+  border-radius: 20px;
+}
+
+.clues {
+  background-color: white;
 }
 
 .clue {
@@ -112,9 +128,33 @@ h1 {
 }
 
 #answer-option-buttons {
+  margin: 40px;
 }
 
 .next-submit-buttons {
   align-content: center;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
+}
+
+.form-check-label {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.round > h2 {
+  padding: 20px;
+}
+
+.round {
+  padding: 20px;
+}
+
+.clue {
+  padding: 5px;
+}
+
+.instruction-steps {
+  font-size: 20px;
+  border: 5px;
+  border-color: orangered;
 }

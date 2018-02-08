@@ -2,65 +2,71 @@
 <html lang="en">
 
 <head>
-    <title>Guess the City!</title>
-    <!-- <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <title>Guess The City!</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="main.css">
     <meta charset="UTF-8">
 </head>
 
-<body>
+<body class="container">
     <!-- <div class="container"></div> -->
     <div id="game-info">
-        <h1> Guess the City!</h1>
+        <h1> Guess The City!</h1>
 
+    </div>
+
+    <div class="timer-box"> Time:
+        <span id="timer">30</span>
     </div>
 
     <div class="game-box">
         <div>
-
-            <div class="timer-box"> Time:
-                <span id="timer">30</span>
-            </div>
-            <div>
+            <div class="round container text-center">
                 <h2 id="roundNumber" class="roundNumber">Round</h2>
-                <p id="clueOne" class="clue">Clue #1</p>
-                <p id="clueTwo" class="clue-two">Clue #2</p>
-                <p id="clueThree" class="clue-three"> Clue #3</p>
-
-
             </div>
-            <form id="answer-option-buttons">
 
-                <input id="radio-btnA" type="radio" name="option" value="1">
+            <div class="clues container">
+                <p id="clueOne" class="clue">Clue #1</p>
+                <p id="clueTwo" class="clue clue-two">Clue #2</p>
+                <p id="clueThree" class="clue clue-three"> Clue #3</p>
+            </div>
+            <form id="answer-option-buttons" class="text-center">
 
-                <label id="radio-btn0">Option 1</label>
+                <div class="form-check form-check-inline">
+                    <input id="radio-btnA" class="form-check-input" type="radio" name="option" value="1">
 
-                <br>
+                    <label id="radio-btn0" class="form-check-label" for="radio-btnA">Option 1</label>
+                </div>
 
-                <input id="radio-btnB" type="radio" name="option" value="2">
+                <!-- <br> -->
 
-                <label id="radio-btn1">Option 2</label>
+                <div class="form-check form-check-inline">
+                    <input id="radio-btnB" class="form-check-input" type="radio" name="option" value="2">
 
-                <br>
+                    <label id="radio-btn1" class="form-check-label" for="radio-btnB">Option 2</label>
+                </div>
 
-                <input id="radio-btnC" type="radio" name="option" value="3">
+                <!-- <br> -->
 
-                <label id="radio-btn2">Option 3</label>
+                <div class="form-check form-check-inline">
+                    <input id="radio-btnC" class="form-check-input" type="radio" name="option" value="3">
 
-                <br>
+                    <label id="radio-btn2" class="form-check-label" for="radio-btnC">Option 3</label>
+                </div>
 
-                <input id="radio-btnD" type="radio" name="option" value="4">
-                <label id="radio-btn3">Option 4</label>
+                <!-- <br> -->
+
+                <div class="form-check form-check-inline">
+                    <input id="radio-btnD" class="form-check-input" type="radio" name="option" value="4">
+                    <label id="radio-btn3" class="form-check-label" for="radio-btnD">Option 4</label>
+                </div>
 
             </form>
-            <div>
-
-            </div>
         </div>
 
 
-        <div class="next-submit-buttons">
+        <div class="next-submit-buttons container text-center">
 
             <button id="next-round-button">NEXT ROUND </button>
             <button id="submit-answer">SUBMIT</button>
@@ -71,8 +77,8 @@
 
 
     </div>
-    <button id="start-game-button">START GAME</button>
-    <button id="how-to-button">HOW TO PLAY</button>
+    <!-- <button id="start-game-button">START GAME</button>
+    <button id="how-to-button">HOW TO PLAY</button> -->
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <!-- <script type="text/javascript" src="ObjectGuess.js"></script> -->

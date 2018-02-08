@@ -24,6 +24,16 @@ var finalRoundIncorrect = document.createTextNode(
   "Incorrect! Congratulations on completing the game."
 );
 
+// Time Up - Next
+var timeNextRound = document.createTextNode(
+  "Time's Up! Next round beginning in 3 seconds."
+);
+
+// Time Up - Final
+var timeFinalRound = document.createTextNode(
+  "Time's Up! Congratulations on completing the game."
+);
+
 var roundNumber = document.getElementById("roundNumber");
 var nextRound = document.getElementById("next-round-button");
 var clueOne = document.getElementById("clueOne");
@@ -46,99 +56,108 @@ gameInfo.appendChild(scoreHeading).style.textAlign = "center";
 
 window.onload = startGame;
 function startGame() {
-  document.getElementById("start-game-button").onclick = function() {
-    // content holders for clue 2 and 3
-    clueTwo.innerHTML = "Clue #2 - appears in <b>10 seconds!</b>";
-    clueThree.innerHTML = "Clue #3 - appears in <b>20 seconds!</b>";
-    //Answer option arrays
-    option1.innerHTML = answerArray[0][0];
-    option2.innerHTML = answerArray[0][1];
-    option3.innerHTML = answerArray[0][2];
-    option4.innerHTML = answerArray[0][3];
-    document.getElementById("start-game-button").disabled = true;
-    // disable next round button when starting game
-    document.getElementById("next-round-button").disabled = true;
-    count = 30;
+  //   document.getElementById("start-game-button").onclick = function() {
+  // content holders for clue 2 and 3
+  clueTwo.innerHTML = "Clue #2 - appears in <b>10 seconds!</b>";
+  clueThree.innerHTML = "Clue #3 - appears in <b>20 seconds!</b>";
+  //Answer option arrays
+  option1.innerHTML = answerArray[0][0];
+  option2.innerHTML = answerArray[0][1];
+  option3.innerHTML = answerArray[0][2];
+  option4.innerHTML = answerArray[0][3];
+  //   document.getElementById("start-game-button").disabled = true;
+  // disable next round button when starting game
+  document.getElementById("next-round-button").disabled = true;
+  count = 30;
 
-    counter = setInterval(timer, 1000);
+  counter = setInterval(timer, 1000);
 
-    function timer() {
-      count = count - 1;
-      if (count <= -1) {
-        clearInterval(counter);
-        // alert("finished");
-        return;
-      }
-
-      document.getElementById("timer").innerHTML = count;
-
-      // updating Round once button is clicked
-      roundNumber.innerHTML = roundArray[0];
-
-      clueOne.innerHTML = clueArrayOne[0];
-
-      if (count === 20) {
-        clueTwo.innerHTML = clueArrayTwo[0];
-      } else if (count === 10) {
-        clueThree.innerHTML = clueArrayThree[0];
-        // document.getElementById("next-round-button").disabled = false;
-      } else if (count === 0) {
-        document.getElementById("submit-answer").disabled = true;
-        document.getElementById("next-round-button").disabled = false;
-      }
-
-      document.getElementById("submit-answer").onclick = function() {
-        if (inputOptionD.checked) {
-          clearInterval(counter);
-          document.getElementById("next-round-button").disabled = false;
-          //   window.alert("Correct Answer!");
-          document.getElementById("submit-answer").disabled = true;
-
-          // Add points to User's score based on timing
-          if (count >= 20 && count <= 29) {
-            // Add 100 points
-            score += 100;
-          } else if (count >= 10 && count <= 19) {
-            // Add 50 points
-            score += 50;
-          } else if (count < 10 && count >= 1) {
-            // Add 25 points
-            score += 25;
-          }
-
-          // Display updated score each round
-          scoreHeading.innerHTML = "Score: " + score;
-
-          // Display correct confirmation
-          nextRoundTimer.appendChild(nextRoundCorrect);
-          gameInfo.appendChild(nextRoundTimer).style.textAlign = "center";
-
-          // Automate next round
-          setTimeout(function() {
-            document.getElementById("next-round-button").click();
-          }, 3000);
-        } else {
-          // Code to be run when User selects wrong option
-          clearInterval(counter);
-          document.getElementById("next-round-button").disabled = false;
-          document.getElementById("submit-answer").disabled = true;
-          //   window.alert("Incorrect! Correct answer is Paris");
-
-          // Display updated score each round
-          scoreHeading.innerHTML = "Score: " + score;
-
-          // Display incorrect confirmation
-          nextRoundTimer.appendChild(nextRoundIncorrect);
-          gameInfo.appendChild(nextRoundTimer).style.textAlign = "center";
-
-          // Automate next round
-          setTimeout(function() {
-            document.getElementById("next-round-button").click();
-          }, 3000);
-        }
-      };
+  function timer() {
+    count = count - 1;
+    if (count <= -1) {
+      clearInterval(counter);
+      // alert("finished");
+      return;
     }
-  };
+
+    document.getElementById("timer").innerHTML = count;
+
+    // updating Round once button is clicked
+    roundNumber.innerHTML = roundArray[0];
+
+    clueOne.innerHTML = clueArrayOne[0];
+
+    if (count === 20) {
+      clueTwo.innerHTML = clueArrayTwo[0];
+    } else if (count === 10) {
+      clueThree.innerHTML = clueArrayThree[0];
+      // document.getElementById("next-round-button").disabled = false;
+    } else if (count === 0) {
+      document.getElementById("submit-answer").disabled = true;
+      document.getElementById("next-round-button").disabled = false;
+
+      // Display correct confirmation
+      nextRoundTimer.appendChild(timeNextRound);
+      gameInfo.appendChild(nextRoundTimer).style.textAlign = "center";
+
+      // Automate next round
+      setTimeout(function() {
+        document.getElementById("next-round-button").click();
+      }, 3000);
+    }
+
+    document.getElementById("submit-answer").onclick = function() {
+      if (inputOptionD.checked) {
+        clearInterval(counter);
+        document.getElementById("next-round-button").disabled = false;
+        //   window.alert("Correct Answer!");
+        document.getElementById("submit-answer").disabled = true;
+
+        // Add points to User's score based on timing
+        if (count >= 20 && count <= 29) {
+          // Add 100 points
+          score += 100;
+        } else if (count >= 10 && count <= 19) {
+          // Add 50 points
+          score += 50;
+        } else if (count < 10 && count >= 1) {
+          // Add 25 points
+          score += 25;
+        }
+
+        // Display updated score each round
+        scoreHeading.innerHTML = "Score: " + score;
+
+        // Display correct confirmation
+        nextRoundTimer.appendChild(nextRoundCorrect);
+        gameInfo.appendChild(nextRoundTimer).style.textAlign = "center";
+
+        // Automate next round
+        setTimeout(function() {
+          document.getElementById("next-round-button").click();
+        }, 3000);
+      } else {
+        // Code to be run when User selects wrong option
+        clearInterval(counter);
+        document.getElementById("next-round-button").disabled = false;
+        document.getElementById("submit-answer").disabled = true;
+        //   window.alert("Incorrect! Correct answer is Paris");
+
+        // Display updated score each round
+        scoreHeading.innerHTML = "Score: " + score;
+
+        // Display incorrect confirmation
+        nextRoundTimer.appendChild(nextRoundIncorrect);
+        gameInfo.appendChild(nextRoundTimer).style.textAlign = "center";
+
+        // Automate next round
+        setTimeout(function() {
+          document.getElementById("next-round-button").click();
+        }, 3000);
+      }
+    };
+    // }
+  }
 
   var nextRound = document.getElementById("next-round-button");
   // NEXT ROUND BUTTON - 2
@@ -183,6 +202,15 @@ function startGame() {
       } else if (count === 0) {
         document.getElementById("submit-answer").disabled = true;
         document.getElementById("next-round-button").disabled = false;
+
+        // Display correct confirmation
+        nextRoundTimer.appendChild(timeNextRound);
+        gameInfo.appendChild(nextRoundTimer).style.textAlign = "center";
+
+        // Automate next round
+        setTimeout(function() {
+          document.getElementById("next-round-button").click();
+        }, 3000);
       }
 
       document.getElementById("submit-answer").onclick = function() {
@@ -280,6 +308,15 @@ function startGame() {
         } else if (count === 0) {
           document.getElementById("submit-answer").disabled = true;
           document.getElementById("next-round-button").disabled = false;
+
+          // Display correct confirmation
+          nextRoundTimer.appendChild(timeNextRound);
+          gameInfo.appendChild(nextRoundTimer).style.textAlign = "center";
+
+          // Automate next round
+          setTimeout(function() {
+            document.getElementById("next-round-button").click();
+          }, 3000);
         }
 
         document.getElementById("submit-answer").onclick = function() {
@@ -375,6 +412,15 @@ function startGame() {
             } else if (count === 0) {
               document.getElementById("submit-answer").disabled = true;
               document.getElementById("next-round-button").disabled = false;
+
+              // Display correct confirmation
+              nextRoundTimer.appendChild(timeNextRound);
+              gameInfo.appendChild(nextRoundTimer).style.textAlign = "center";
+
+              // Automate next round
+              setTimeout(function() {
+                document.getElementById("next-round-button").click();
+              }, 3000);
             }
 
             document.getElementById("submit-answer").onclick = function() {
@@ -438,8 +484,9 @@ function startGame() {
 
               clueTwo.innerHTML = "Clue #2 - appears in 10 seconds!";
               clueThree.innerHTML = "Clue #3 - appears in 20 seconds!";
-              document.getElementById("next-round-button").disabled = true;
               document.getElementById("submit-answer").disabled = false;
+              document.getElementById("next-round-button").remove();
+
               count = 30;
 
               counter = setInterval(timer, 1000);
@@ -469,8 +516,13 @@ function startGame() {
                 } else if (count === 10) {
                   clueThree.innerHTML = clueArrayThree[4];
                 } else if (count === 0) {
-                  document.getElementById("submit-answer").disabled = true;
+                  document.getElementById("submit-answer").disabled = false;
                   document.getElementById("next-round-button").disabled = false;
+
+                  // Display correct confirmation
+                  nextRoundTimer.appendChild(timeFinalRound);
+                  gameInfo.appendChild(nextRoundTimer).style.textAlign =
+                    "center";
                 }
               }
 
@@ -480,9 +532,9 @@ function startGame() {
                   //   option4 === correctAnswerArray[3]
                 ) {
                   clearInterval(counter);
-                  document.getElementById("next-round-button").disabled = false;
+                  //   document.getElementById("next-round-button").disabled = false;
                   //   window.alert("Correct Answer!");
-                  document.getElementById("submit-answer").disabled = true;
+                  document.getElementById("submit-answer").disabled = false;
 
                   if (count >= 20 && count <= 29) {
                     // Add 100 points
@@ -505,8 +557,8 @@ function startGame() {
                 } else {
                   // Code to be run when User selects wrong option
                   clearInterval(counter);
-                  document.getElementById("next-round-button").disabled = false;
-                  document.getElementById("submit-answer").disabled = true;
+                  //   document.getElementById("next-round-button").disabled = false;
+                  document.getElementById("submit-answer").disabled = false;
                   //   window.alert("Incorrect! Correct Answer is Mumbai");
 
                   // Display updated score each round
@@ -566,7 +618,7 @@ var roundArray = [
 ];
 
 var clueArrayOne = [
-  "Clue #1 - The Designer of the Statue of Libery was from this city",
+  "Clue #1 - The designer of the Statue of Liberty was from this city",
   "Clue #1 - This city has a mountain with a flat peak and four legs",
   "Clue #1 - A good place to drop the hook from the bow of your boat",
   "Clue #1 - Constantine the Great made this the capital of the Eastern Roman Empire in 306 AD ",

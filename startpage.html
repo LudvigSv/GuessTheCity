@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Guess The City!</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <meta charset="UTF-8">
+</head>
+
+<body class="container">
+    <!-- <div class="container"></div> -->
+    <div id="game-info">
+        <h1 class="header-start-page"> Guess The City!</h1>
+
+    </div>
+    <div class="container text-center">
+        <h2>Instructions</h2>
+        <div class="instruction-steps">
+            <p>Try to guess the city from the clues
+                <br> The less clues you need the higher you score
+                <br> 1 clue: 100 points </br>
+                2 clues: 50 points
+                <br> 3 clues: 25 points
+                <br>
+            </p>
+        </div>
+    </div>
+
+    <div class="container text-center">
+        <button id="start-game-button">START GAME</button>
+    </div>
+    <!-- <button id="how-to-button">HOW TO PLAY</button> -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript" src="ObjectGuess.js"></script> -->
+    <!-- <script type="text/javascript" src="guessthecity.js"></script> -->
+    <script>
+        document.getElementById("start-game-button").onclick = function () {
+            location.href = "index.html"
+        };
+        // start.onclick(window.onload)
+    </script>
+</body>
+
+</html>
