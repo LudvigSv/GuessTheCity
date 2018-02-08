@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Guess the City!</title>
+    <!-- <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div class="container"></div>
+    <div>
+        <h1> Guess the City!</h1>
+
+    </div>
+
+    <div class="game-box">
+        <div>
+
+            <div class="timer-box"> Time:
+                <span id="timer">30</span>
+            </div>
+            <div>
+                <h2 id="roundNumber" class="roundNumber">Round</h2>
+                <p id="clueOne" class="clue">Clue #1</p>
+                <p id="clueTwo" class="clue-two">Clue #2</p>
+                <p id="clueThree" class="clue-three"> Clue #3</p>
+
+
+            </div>
+            <form id="answer-option-buttons">
+
+                <input id="radio-btnA" type="radio" name="option" value="1">
+
+                <label id="radio-btn0">Option 1</label>
+
+                <br>
+
+                <input id="radio-btnB" type="radio" name="option" value="2">
+
+                <label id="radio-btn1">Option 2</label>
+
+                <br>
+
+                <input id="radio-btnC" type="radio" name="option" value="3">
+
+                <label id="radio-btn2">Option 3</label>
+
+                <br>
+
+                <input id="radio-btnD" type="radio" name="option" value="4">
+                <label id="radio-btn3">Option 4</label>
+
+            </form>
+            <div>
+
+            </div>
+        </div>
+
+
+        <div class="next-submit-buttons">
+
+            <button id="next-round-button">NEXT ROUND </button>
+            <button id="submit-answer">SUBMIT</button>
+            <div>
+
+            </div>
+        </div>
+
+
+    </div>
+    <button id="start-game-button">START GAME</button>
+    <button id="how-to-button">HOW TO PLAY</button>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript" src="ObjectGuess.js"></script> -->
+    <script type="text/javascript" src="guessthecity.js"></script>
+</body>
+
+</html>
