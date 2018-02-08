@@ -10,23 +10,23 @@ var nextRoundTimer = document.createElement("h2");
 
 // Next Rounds
 var nextRoundCorrect = document.createTextNode(
-  "Correct! Next round beginning in 3 seconds."
+  "Correct! Next round starts in 3 seconds."
 );
 var nextRoundIncorrect = document.createTextNode(
-  "Incorrect! Next round beginning in 3 seconds."
+  "Incorrect! Next round starts in 3 seconds."
 );
 
 // Final Round
 var finalRoundCorrect = document.createTextNode(
-  "Correct! Congratulations on completing the game."
+  "Correct! Game Over, thanks for playing!."
 );
 var finalRoundIncorrect = document.createTextNode(
-  "Incorrect! Congratulations on completing the game."
+  "Incorrect! Game Over, thanks for playing!"
 );
 
 // Time Up - Next
 var timeNextRound = document.createTextNode(
-  "Time's Up! Next round beginning in 3 seconds."
+  "Time's Up! Next round starts in 3 seconds."
 );
 
 // Time Up - Final
@@ -58,8 +58,8 @@ window.onload = startGame;
 function startGame() {
   //   document.getElementById("start-game-button").onclick = function() {
   // content holders for clue 2 and 3
-  clueTwo.innerHTML = "Clue #2 - appears in <b>10 seconds!</b>";
-  clueThree.innerHTML = "Clue #3 - appears in <b>20 seconds!</b>";
+  clueTwo.innerHTML = "Clue #2 - appears when 20 seconds left!";
+  clueThree.innerHTML = "Clue #3 - appears when 10 seconds left!";
   //Answer option arrays
   option1.innerHTML = answerArray[0][0];
   option2.innerHTML = answerArray[0][1];
@@ -68,7 +68,7 @@ function startGame() {
   //   document.getElementById("start-game-button").disabled = true;
   // disable next round button when starting game
   document.getElementById("next-round-button").disabled = true;
-  count = 30;
+  count = 31;
 
   counter = setInterval(timer, 1000);
 
@@ -166,8 +166,8 @@ function startGame() {
     nextRoundTimer.innerHTML = "";
 
     console.log("button clicked");
-    clueTwo.innerHTML = "Clue #2 - appears in 10 seconds!";
-    clueThree.innerHTML = "Clue #3 - appears in 20 seconds!";
+    clueTwo.innerHTML = "Clue #2 - appears when 20 seconds left!";
+    clueThree.innerHTML = "Clue #3 - appears when 10 seconds left!";
     //Answer option arrays
     option1.innerHTML = answerArray[1][0];
     option2.innerHTML = answerArray[1][1];
@@ -176,7 +176,7 @@ function startGame() {
     document.getElementById("next-round-button").disabled = true;
     document.getElementById("submit-answer").disabled = false;
 
-    count = 30;
+    count = 31;
 
     counter = setInterval(timer, 1000);
 
@@ -273,8 +273,8 @@ function startGame() {
       // Remove previous round information
       nextRoundTimer.innerHTML = "";
 
-      clueTwo.innerHTML = "Clue #2 - appears in 10 seconds!";
-      clueThree.innerHTML = "Clue #3 - appears in 20 seconds!";
+      clueTwo.innerHTML = "Clue #2 - appears when 20 seconds left!";
+      clueThree.innerHTML = "Clue #3 - appears when 10 seconds left!";
       //Answer option arrays
       option1.innerHTML = answerArray[2][0];
       option2.innerHTML = answerArray[2][1];
@@ -282,7 +282,7 @@ function startGame() {
       option4.innerHTML = answerArray[2][3];
       document.getElementById("next-round-button").disabled = true;
       document.getElementById("submit-answer").disabled = false;
-      count = 30;
+      count = 31;
 
       counter = setInterval(timer, 1000);
 
@@ -377,8 +377,8 @@ function startGame() {
           // Remove previous round information
           nextRoundTimer.innerHTML = "";
 
-          clueTwo.innerHTML = "Clue #2 - appears in 10 seconds!";
-          clueThree.innerHTML = "Clue #3 - appears in 20 seconds!";
+          clueTwo.innerHTML = "Clue #2 - appears when 20 seconds left!";
+          clueThree.innerHTML = "Clue #3 - appears when 10 seconds left!";
           //Answer option arrays
           option1.innerHTML = answerArray[3][0];
           option2.innerHTML = answerArray[3][1];
@@ -386,7 +386,7 @@ function startGame() {
           option4.innerHTML = answerArray[3][3];
           document.getElementById("next-round-button").disabled = true;
           document.getElementById("submit-answer").disabled = false;
-          count = 30;
+          count = 31;
 
           counter = setInterval(timer, 1000);
 
@@ -482,12 +482,12 @@ function startGame() {
               // Remove previous round information
               nextRoundTimer.innerHTML = "";
 
-              clueTwo.innerHTML = "Clue #2 - appears in 10 seconds!";
-              clueThree.innerHTML = "Clue #3 - appears in 20 seconds!";
+              clueTwo.innerHTML = "Clue #2 - appears when 20 seconds left!";
+              clueThree.innerHTML = "Clue #3 - appears when 10 seconds left!";
               document.getElementById("submit-answer").disabled = false;
               document.getElementById("next-round-button").remove();
 
-              count = 30;
+              count = 31;
 
               counter = setInterval(timer, 1000);
 
@@ -578,35 +578,6 @@ function startGame() {
   };
 }
 
-//   var radioBtnZero = document.getElementById("radio-btn0");
-//   var radioBtnOne = document.getElementById("radio-btn1");
-//   var radioBtnTwo = document.getElementById("radio-btn2");
-//   var radioBtnThree = document.getElementById("radio-btn3");
-
-// correctAnswerArray.forEach(function(radioBtnZero) {
-//   console.log(correctAnswerArray);
-// });
-
-// var sumbitAnswer = document.getElementById("submit-answer");
-// var finalScore = 0;
-// finalScore.getElementById("finalScore").innerHTML = pointsCounter;
-
-// var pointsCounter = 0;
-
-// for (var i = 0; i <= correctAnswerArray.length; i++) {
-//   radioBtnZero.innerHTML = correctAnswerArray[i];
-// }
-
-// sumbitAnswer.onclick = function() {
-//   if (correctAnswerArray === true && timer > 20) {
-//     pointsCounter += 15;
-//   } else if (correctAnswerArray === true && timer > 10) {
-//     pointsCounter += 10;
-//   } else if (correctAnswerArray === true && timer > 1) {
-//     pointsCounter += 5;
-//   }
-// };
-
 var roundArray = [
   "Round 1 - A city somewhere in Western Europe",
   "Round 2 - A city somewhere in Africa",
@@ -629,7 +600,7 @@ var clueArrayOne = [
 
 var clueArrayTwo = [
   "Clue #2 - The river Seine runs through the center of this city",
-  "Clue #2 - If you're traveling from the Indian Ocean to the Atlantic Ocean by boat, you would pass this city",
+  "Clue #2 - This city is known as the Mother City",
   "Clue #2 - Approximately 250 black bears, and 60 grizzly bears live in this urban center",
   "Clue #2 - This city has the third oldest subway in the world, dating from 1875",
   'Clue #2 - British word for "mom" + teenage word for "bye"'
@@ -655,16 +626,6 @@ var answerArray = [
   //   ["Sao Paolo", "Montevideo", "Santiago", "Buenos Aires"],
   //   ["Melbourne", "Sydney", "Perth", "Brisbane"]
 ];
-
-// var correctAnswerArray = [
-//   answerArray[0][3],
-//   answerArray[1][1],
-//   answerArray[2][1],
-//   answerArray[3][0],
-//   answerArray[4][2],
-//   answerArray[5][3],
-//   answerArray[6][0]
-// ];
 
 var correctAnswerArray = [
   answerArray[0][3],
