@@ -18,7 +18,7 @@ var nextRoundIncorrect = document.createTextNode(
 
 // Final Round
 var finalRoundCorrect = document.createTextNode(
-  "Correct! Game Over, thanks for playing!."
+  "Correct! Game Over, thanks for playing!"
 );
 var finalRoundIncorrect = document.createTextNode(
   "Incorrect! Game Over, thanks for playing!"
@@ -215,7 +215,7 @@ function startGame() {
 
       document.getElementById("submit-answer").onclick = function() {
         if (
-          inputOptionB.checked // === correctAnswerArray[0] //||
+          inputOptionA.checked // === correctAnswerArray[0] //||
           //   option4 === correctAnswerArray[3]
         ) {
           clearInterval(counter);
@@ -579,57 +579,57 @@ function startGame() {
 }
 
 var roundArray = [
-  "Round 1 - A city somewhere in Western Europe",
-  "Round 2 - A city somewhere in Africa",
-  "Round 3 - A city somewhere in North America",
-  "Round 4 - A city somewhere in Eastern Europe",
-  "Round 5 - A city somewhere in Asia"
+  "A city in South America",
+  "A city in Australia",
+  "A city in North America",
+  "A city in Eastern Europe",
+  "A city in Asia"
   //   "Round 6 - A city somewhere in South America",
   //   "Round 7 - A city somewhere in Australia"
 ];
 
 var clueArrayOne = [
-  "Clue #1 - The designer of the Statue of Liberty was from this city",
-  "Clue #1 - This city has a mountain with a flat peak and four legs",
+  "Clue #1 - Is known as the Paris of South America",
+  "Clue #1 - Actor: Gibson's: first name + Movie Character Jason: last name",
   "Clue #1 - A good place to drop the hook from the bow of your boat",
   "Clue #1 - Constantine the Great made this the capital of the Eastern Roman Empire in 306 AD ",
   "Clue #1 - This city is built on a group of 7 islands."
-  //   "Clue #1 - This city has more bookshops per capital than any other",
-  //   "Clue #1 - Was originally going to be called Batmania"
+  //   "Clue #1 - The river Seine runs through the center of this city",
+  //   "Clue #1 - This city is known as the Mother City",
 ];
 
 var clueArrayTwo = [
-  "Clue #2 - The river Seine runs through the center of this city",
-  "Clue #2 - This city is known as the Mother City",
+  "Clue #2 - This city has more bookshops per capital than any other",
+  "Clue #1 - Was originally going to be called Batmania",
   "Clue #2 - Approximately 250 black bears, and 60 grizzly bears live in this urban center",
   "Clue #2 - This city has the third oldest subway in the world, dating from 1875",
   'Clue #2 - British word for "mom" + teenage word for "bye"'
-  //   "Clue #2 - Its most visited attraction is a graveyard called: Recoleta",
-  //   "Clue #2 - This city has the highest number of cafes per capita in the world"
+  //   "Clue #2 - Known as the city of lights",
+  //   "Clue #3 - In Afrikaans this city is called: Kaapstad"
 ];
 var clueArrayThree = [
-  "Clue #3 - Known as the City of Light",
-  "Clue #3 - In Afrikaans this city is called: Kaapstad",
+  "Clue #3 - The most visited attraction is a graveyard called: Recoleta",
+  "Clue #3 - This city has the highest number of cafes per capita in the world",
   "Clue #3 - The capital of the 49th state of the USA",
   'Clue #3 - The city where "East meets West"',
   "Clue #3 - The home of Bollywood"
-  //   "Clue #3 - Is known as the Paris of South America",
-  //   "Clue #3 - Actor Gibson's: first name + Movie Character Jason: last name"
+  //   "Clue #3 - The designer of the Statue of Liberty was from this city",
+  //   "Clue #3 - This city has a mountain with a flat peak and four legs",
 ];
 
 var answerArray = [
-  ["London", "Madrid", "Munich", "Paris"],
-  ["Dakar", "Cape Town", "Durban", "Maputo"],
+  ["Bogota", "Santiago", "Sao Paolo", "Buenos Aires"],
+  ["Melbourne", "Sydney", "Perth", "Brisbane"],
   ["Anchorage", "Portsmouth", "Seattle", "San Francisco"],
   ["Ankara", "Istanbul", "Athens", "Beirut"],
   ["New Dehli", "Dhaka", "Mumbai", "Kolkata"]
-  //   ["Sao Paolo", "Montevideo", "Santiago", "Buenos Aires"],
-  //   ["Melbourne", "Sydney", "Perth", "Brisbane"]
+  //   ["Madrid", "Munich", "Milan", "Paris"],
+  //   ["Dakar", "Cape Town", "Durban", "Maputo"]
 ];
 
 var correctAnswerArray = [
   answerArray[0][3],
-  answerArray[1][1],
+  answerArray[1][0],
   answerArray[2][0],
   answerArray[3][1],
   answerArray[4][2]

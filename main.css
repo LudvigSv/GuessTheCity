@@ -1,15 +1,17 @@
 body {
-  background-color: #d3d3d3;
+  background-image: url("background.jpg");
+  background-size: cover;
+  font-family: "roboto condensed", sans-serif;
 }
 
 h1 {
   text-align: center;
-  font-family: Helvetica, sans-serif;
-  font-size: 3em;
+  font-size: 5em;
 }
 
 .header-start-page {
-  margin-top: 200px;
+  margin-top: 130px;
+  font-size: 8em;
 }
 
 #game-info {
@@ -19,7 +21,7 @@ h1 {
 #start-game-button {
   margin-top: 50px;
   clear: both;
-  background-color: #cf6640;
+  background-color: #e43a19;
   border: none;
   border-radius: 5px;
   color: black;
@@ -28,7 +30,6 @@ h1 {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  font-family: Courier;
   align-items: center;
 }
 
@@ -43,7 +44,6 @@ h1 {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  font-family: Courier;
   align-items: center;
 }
 
@@ -58,13 +58,12 @@ h1 {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  font-family: Courier;
   display: none;
 }
 
 #submit-answer {
   clear: both;
-  background-color: #cf6640;
+  background-color: #e43a19;
   border: none;
   border-radius: 5px;
   color: black;
@@ -73,7 +72,6 @@ h1 {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  font-family: Courier;
 }
 
 .game-box {
@@ -82,53 +80,49 @@ h1 {
   margin-top: 50px;
   margin-bottom: 160px;
   padding: 5, 40;
-  background-color: #7a81cc;
-  border-radius: 20px;
+  background-color: #111f4d;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
 .timer-box {
   font-size: 30px;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 #timer {
   font-size: 30px;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .roundNumber {
-  background-color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f2f4f7;
   font-size: 26px;
   padding-left: 20px;
-  border-radius: 20px;
+  border-radius: 5px;
 }
 
 .clues {
-  background-color: white;
+  background-color: #f2f4f7;
 }
 
 .clue {
   font-size: 22px;
-  font-family: Arial, Helvetica, sans-serif;
   padding-left: 20px;
 }
 
 .clue-two {
   font-size: 22px;
-  font-family: Arial, Helvetica, sans-serif;
   padding-left: 20px;
 }
 
 .clue-three {
   font-size: 22px;
-  font-family: Arial, Helvetica, sans-serif;
   padding-left: 20px;
 }
 
 #answer-option-buttons {
   margin: 40px;
+  color: white;
 }
 
 .next-submit-buttons {
