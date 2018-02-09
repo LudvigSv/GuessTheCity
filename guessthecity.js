@@ -9,19 +9,15 @@ var scoreContent = document.createTextNode("Score: " + score);
 var nextRoundTimer = document.createElement("h2");
 
 // Next Rounds
-var nextRoundCorrect = document.createTextNode(
-  "Correct! Next round starts in 3 seconds."
-);
-var nextRoundIncorrect = document.createTextNode(
-  "Incorrect! Next round starts in 3 seconds."
-);
+var nextRoundCorrect = document.createTextNode("Correct!");
+var nextRoundIncorrect = document.createTextNode("Incorrect!");
 
 // Final Round
 var finalRoundCorrect = document.createTextNode(
-  "Correct! Game Over, thanks for playing!"
+  "Correct! Game over, thanks for playing!"
 );
 var finalRoundIncorrect = document.createTextNode(
-  "Incorrect! Game Over, thanks for playing!"
+  "Incorrect! Game over, thanks for playing!"
 );
 
 // Time Up - Next
@@ -599,7 +595,7 @@ var clueArrayOne = [
 ];
 
 var clueArrayTwo = [
-  "Clue #2 - This city has more bookshops per capital than any other",
+  "Clue #2 - This city has more bookshops per capita than any other",
   "Clue #1 - Was originally going to be called Batmania",
   "Clue #2 - Approximately 250 black bears, and 60 grizzly bears live in this urban center",
   "Clue #2 - This city has the third oldest subway in the world, dating from 1875",
